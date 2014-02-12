@@ -1,0 +1,30 @@
+@font-face {
+  font-family: cubic;
+  src: url("/fonts/cubic.ttf");
+}
+html {
+  background-color: #eeeeee;
+}
+
+a {
+  text-decoration: none;
+  color: #00cc00;
+}
+
+a:hover {
+  color: #078600;
+}
+.n-home-content {
+  margin-top: 200px;
+  text-align: center;
+}
+
+.n-home-content h1 {
+  font-family: cubic;
+  font-size: 500%;
+}
+
+.n-home-content p {
+  font-family: arial;
+  font-size: 90%; 
+}
