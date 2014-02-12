@@ -1,6 +1,6 @@
-Netanoids
+Netanoids API
 ---
-Netanoids is an experimental science-fiction-inspired Andriod Application in which a netanoid (species 0) ambles around your device.
+Netanoids is an experimental science-fiction-inspired Andriod Application in which a netanoid (species 0) ambles around your device. This is the home of the API called by the Android app.
 
 There's this idea of shared consciousness, that humans are all individual expressions of a single consciousness.  A netanoid is a single expression of the internet "consciousness".  
 
