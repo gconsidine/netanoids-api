@@ -40,21 +40,23 @@ class SourceController extends BaseController {
         $target = [
           'jokes',
           'puns',
-          'dadjokes'
+          'dadjokes',
+          'humor',
+          'humour'
         ];
       }
     } else if ($this->type === 'image') {
       if($source['image'][0] === 'reddit') {
         $target = [
           'funny',
-          'humor',
-          'humour'
+          'pics',
+          'woahdude'
         ];
       }
     } else if ($this->type === 'video') {
       if($source['video'][0] === 'youtube') {
         $target = [
-          'PL5gcv_l9e7VUEe8E9aql1ivdX8Fjc4a6L'
+          'PL5gcv_l9e7VUEe8E9aql1ivdX8Fjc4a6L' // Playful playlist (greg@greg-considine.com)
         ];
       }
     }

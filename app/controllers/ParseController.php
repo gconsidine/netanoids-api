@@ -14,7 +14,7 @@ class ParseController extends BaseController {
       $this->parseYoutubeResposne();
     }
 
-    return $this->response;
+    return $this->arrayToJson($this->response);
   }
 
   private function parseRedditResponse() {
@@ -27,6 +27,10 @@ class ParseController extends BaseController {
   private function parseYouTubeResponse() {
     $json = new YouTube($this->source);
 
+  }
+
+  private function arrayToJson($array) {
+    return json_encode($array);
   }
 
   private function getErrorMessage() {
