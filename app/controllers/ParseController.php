@@ -11,7 +11,7 @@ class ParseController extends BaseController {
     if($source['source'] === 'reddit') {
       $this->parseRedditResponse();  
     } else if($source['source'] === 'youtube') {
-      $this->parseYoutubeResposne();
+      $this->parseYouTubeResponse();
     }
 
     return $this->arrayToJson($this->response);
@@ -19,14 +19,12 @@ class ParseController extends BaseController {
 
   private function parseRedditResponse() {
     $reddit = new Reddit($this->source);  
-
-    // TODO: Choose first of type if it exists or return error */
     $this->response = $reddit->fetch();
   }
 
   private function parseYouTubeResponse() {
-    $json = new YouTube($this->source);
-
+    $youTube = new YouTube($this->source);
+    $this->response = $youTube->fetch();
   }
 
   private function arrayToJson($array) {

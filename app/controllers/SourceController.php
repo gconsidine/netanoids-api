@@ -56,7 +56,7 @@ class SourceController extends BaseController {
     } else if ($this->type === 'video') {
       if($source['video'][0] === 'youtube') {
         $target = [
-          'PL5gcv_l9e7VUEe8E9aql1ivdX8Fjc4a6L' // Playful playlist (greg@greg-considine.com)
+          'PL5gcv_l9e7VU2JYNlp9w7PJzvSerMx1-1' // Playful playlist (greg@greg-considine.com)
         ];
       }
     }
