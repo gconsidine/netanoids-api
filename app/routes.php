@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['prefix' => 'api'], function () {
+Route::group(['prefix' => 'netanoids'], function () {
   Route::controller('/{species}/{mood}/{type}/{input}', 'ApiController');
   
   Route::get('/', function () {
