@@ -36,8 +36,7 @@ class YouTube {
     
     if(isset($obj->items[$index])) {
       $response['title'] = $obj->items[$index]->snippet->title;
-      $response['content'] = urlencode('http://www.youtube.com/watch?v=' 
-                           . $obj->items[$index]->snippet->resourceId->videoId);
+      $response['content'] = $obj->items[$index]->snippet->resourceId->videoId;
       $response['status'] = 'success';
     }
 

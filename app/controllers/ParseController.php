@@ -32,7 +32,10 @@ class ParseController extends BaseController {
   }
 
   private function getErrorMessage() {
-    return '{ "status" : "Error: Invalid JSON Response" }';
+    return '{ 
+      "status": "fail",
+      "message": Invalid JSON Response" 
+    }';
   }
 
   private function setResponse($response) {

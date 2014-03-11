@@ -11,7 +11,7 @@ class ApiController extends BaseController {
   /* Populate arrays with all supported species, moods, types, and input */
   public function __construct() {
     $this->species = ['0'];
-    $this->moods = ['playful'];
+    $this->moods = ['playful', 'depressed', 'zonked'];
     $this->types = ['text', 'image', 'video'];
     $this->userInputs = ['yes', 'no'];
   }
@@ -78,7 +78,10 @@ class ApiController extends BaseController {
   
   /* Return a string of the first error encountered in validation */
   private function getErrorMessage() {
-    return '{ "status" : "Error: ' . $this->error . '" }';
+    return '{ 
+      "status" : "fail",
+      "message" : "' . $this->error . '" 
+    }';
   }
 
 }

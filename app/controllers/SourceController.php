@@ -9,6 +9,10 @@ class SourceController extends BaseController {
 
     if($mood === 'playful') {
       return $this->getPlayfulSource();
+    } else if($mood === 'depressed') {
+       return $this->getDepressedSource();
+    } else if($mood === 'zonked') {
+      return $this->getZonkedSource();
     }
   }
 
@@ -16,7 +20,7 @@ class SourceController extends BaseController {
    * Sources are returned shuffled to be scraped in order until a match 
    * based on the type specified is found.
    */
-  private function getPlayfulSource() {
+  private function getZonkedSource() {
     /* Types and general sources */
     $source = [
       'text' => [
@@ -38,6 +42,109 @@ class SourceController extends BaseController {
     if($this->type === 'text') {
       if($source['text'][0] === 'reddit') {
         $target = [
+          'stonerphilosophy',
+          'quotes',
+          'luciddreaming'
+        ];
+      }
+    } else if ($this->type === 'image') {
+      if($source['image'][0] === 'reddit') {
+        $target = [
+          'surreal',
+          'mildlyinteresting',
+          'woahdude',
+          'earthporn',
+          'quotesporn'
+        ];
+      }
+    } else if ($this->type === 'video') {
+      if($source['video'][0] === 'youtube') {
+        $target = [
+          'PL5gcv_l9e7VWkjF3ft6Cv6E9N5jyIIlp_' // netanoids-zonked playlist (greg@greg-considine.com
+        ];
+      }
+    }
+    
+    shuffle($target);
+
+    return [
+      'type' => $this->type,
+      'source' => $source[$this->type][0],
+      'target' => $target[0]
+    ];
+  }
+
+  private function getDepressedSource() {
+    $source = [
+      'text' => [
+        'reddit'
+      ],
+      'image' => [
+        'reddit'
+      ],
+      'video' => [
+        'youtube'
+      ]
+    ];
+
+    shuffle($source[$this->type]);
+
+    $target = [];
+    if($this->type === 'text') {
+      if($source['text'][0] === 'reddit') {
+        $target = [
+          'howtonotgiveafuck',
+          'lonely',
+          'sad',
+          'foreveralone'
+        ];
+      }
+    } else if ($this->type === 'image') {
+      if($source['image'][0] === 'reddit') {
+        $target = [
+          'funnyandsad',
+          'sad',
+          'woahdude',
+          'foreveralone',
+          'baww'
+        ];
+      }
+    } else if ($this->type === 'video') {
+      if($source['video'][0] === 'youtube') {
+        $target = [
+          'PL5gcv_l9e7VWgKHe-cgZHP1o2K411xeZF' // netanoids-depressed playlist
+        ];
+      }
+    }
+    
+    shuffle($target);
+
+    return [
+      'type' => $this->type,
+      'source' => $source[$this->type][0],
+      'target' => $target[0]
+    ];
+  }
+
+  private function getPlayfulSource() {
+    $source = [
+      'text' => [
+        'reddit'
+      ],
+      'image' => [
+        'reddit'
+      ],
+      'video' => [
+        'youtube'
+      ]
+    ];
+
+    shuffle($source[$this->type]);
+
+    $target = [];
+    if($this->type === 'text') {
+      if($source['text'][0] === 'reddit') {
+        $target = [
           'jokes',
           'puns',
           'dadjokes',
@@ -49,14 +156,13 @@ class SourceController extends BaseController {
       if($source['image'][0] === 'reddit') {
         $target = [
           'funny',
-          'pics',
-          'woahdude'
+          'pics'
         ];
       }
     } else if ($this->type === 'video') {
       if($source['video'][0] === 'youtube') {
         $target = [
-          'PL5gcv_l9e7VU2JYNlp9w7PJzvSerMx1-1' // Playful playlist (greg@greg-considine.com)
+          'PL5gcv_l9e7VU2JYNlp9w7PJzvSerMx1-1' // netanoids-playful playlist
         ];
       }
     }

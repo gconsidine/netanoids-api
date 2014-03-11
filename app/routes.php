@@ -5,7 +5,8 @@ Route::group(['prefix' => 'netanoids'], function () {
   
   Route::get('/', function () {
     return '{
-      "status" : "fail"
+      "status": "fail",
+      "message": "Invalid API formatting -- Use api.greg-considine.com/netanoids/<species>/<mood>/<type>/<input>"
     }';
   });
 
