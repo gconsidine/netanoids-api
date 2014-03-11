@@ -104,7 +104,6 @@ class SourceController extends BaseController {
         $target = [
           'funnyandsad',
           'sad',
-          'woahdude',
           'foreveralone',
           'baww'
         ];
