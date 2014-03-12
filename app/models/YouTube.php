@@ -9,7 +9,7 @@ class YouTube {
 
   public function __construct($source) {
     $this->key = getenv('YOU_TUBE');
-    $this->path = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=';
+    $this->path = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=';
     $this->source = $source;
   }
 
